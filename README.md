@@ -9,8 +9,8 @@ Compatibility
 
 **Operating Systems:**
 
- + Debian 6 (Squeeze) i686
- + Debian 6 (Squeeze) x86_64
+ + Debian 7 (Squeeze) i686
+ + Debian 7 (Squeeze) x86_64
 
 **Platforms:**
 
@@ -26,7 +26,7 @@ Download
 
 Download the script with the following command:
 
-	cd ~; wget --no-check-certificate -O minimal.tar.gz http://www.github.com/maxexcloo/Minimal/tarball/master; tar zxvf minimal.tar.gz; cd *Minimal*
+	cd ~; wget --no-check-certificate -O minimal.tar.gz http://www.github.com/theebrownieee/Minimal/tarball/master; tar zxvf minimal.tar.gz; cd *Minimal*
 
 Instructions
 ============
