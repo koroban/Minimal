@@ -289,11 +289,11 @@ function packages_create {
 		fi
 	fi
 	
-	if [[ dpkg -s upstart >/dev/null 2>&1 ]]; then
+	if dpkg -s upstart >/dev/null 2>&1; then
 		echo "upstart installed detected - wheezy fails to switch to sysvinit"
 		cat lists/upstart >> lists/temp
 		# need to remove sysvinit from install if we use upstart
-		sed -i 's/^sysvinit.*$//g' lists/temp
+		sed -i 's/^sysvinit\s*install$//g' lists/temp
 	fi
 
 	# Sort Package List
