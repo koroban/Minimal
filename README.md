@@ -26,7 +26,7 @@ Download
 
 Download the script with the following command:
 
-	cd ~; wget --no-check-certificate -O minimal.tar.gz http://www.github.com/theebrownieee/Minimal/tarball/master; tar zxvf minimal.tar.gz; cd *Minimal*
+	cd ~; wget --no-check-certificate -O minimal.tar.gz http://www.github.com/koroban/Minimal/tarball/master; tar zxvf minimal.tar.gz; cd *Minimal*
 
 Instructions
 ============
