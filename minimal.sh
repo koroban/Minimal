@@ -351,9 +351,9 @@ case "$1" in
 	# Show Help
 	*)
 		echo \>\> You must run this script with options. They are outlined below:
-		echo minimal.sh dropbear        minimal Dropbear based install
-		echo minimal.sh dropbear_only   minimal Dropbear based install without sftp support
-		echo minimal.sh ssh             minimal OpenSSH based install
+		echo "$0 dropbear        minimal Dropbear based install"
+		echo "$0 dropbear_only   minimal Dropbear based install without sftp support"
+		echo "$0 ssh             minimal OpenSSH based install"
 		echo 
 		echo To install extra packages defined in the extra file: bash minimal.sh extra
 		echo To set the clock, clean files and create a user: bash minimal.sh configure

@@ -4,3 +4,4 @@ mountall                                        install
 libdbus-1-3                                     install
 libnih-dbus1                                    install
 dbus                                            install
+libjson0                                        install
