@@ -195,10 +195,12 @@ function install_dropbear {
 	apt-get install dropbear
 	# Update Configuration Files
 	cp settings/dropbear /etc/default/dropbear
-	# Install OpenSSH For SFTP Support
-	install_ssh
-	# Remove OpenSSH Daemon
-	update-rc.d -f ssh remove
+	if [[ "$1" == "" ]]; then
+		# Install OpenSSH For SFTP Support
+		install_ssh
+		# Remove OpenSSH Daemon
+		update-rc.d -f ssh remove
+	fi
 	# Clean Package List
 	packages_purge
 }
@@ -286,6 +288,14 @@ function packages_create {
 			cat lists/kernel-xen-x86_64 >> lists/temp
 		fi
 	fi
+	
+	if [[ dpkg -s upstart >/dev/null 2>&1 ]]; then
+		echo "upstart installed detected - wheezy fails to switch to sysvinit"
+		cat lists/upstart >> lists/temp
+		# need to remove sysvinit from install if we use upstart
+		sed -i 's/^sysvinit.*$//g' lists/temp
+	fi
+
 	# Sort Package List
 	sort -o lists/temp lists/temp
 }
@@ -320,6 +330,11 @@ case "$1" in
 		install_basic
 		install_dropbear
 	;;
+	# Minimise System & Install Dropbear
+	dropbear_only)
+		install_basic
+		install_dropbear only
+	;;
 	# Install Extra Packages
 	extra)
 		install_extra
@@ -336,8 +351,10 @@ case "$1" in
 	# Show Help
 	*)
 		echo \>\> You must run this script with options. They are outlined below:
-		echo For a minimal Dropbear based install: bash minimal.sh dropbear
-		echo For a minimal OpenSSH based install: bash minimal.sh ssh
+		echo minimal.sh dropbear        minimal Dropbear based install
+		echo minimal.sh dropbear_only   minimal Dropbear based install without sftp support
+		echo minimal.sh ssh             minimal OpenSSH based install
+		echo 
 		echo To install extra packages defined in the extra file: bash minimal.sh extra
 		echo To set the clock, clean files and create a user: bash minimal.sh configure
 	;;
