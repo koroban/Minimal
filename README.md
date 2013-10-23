@@ -9,8 +9,8 @@ Compatibility
 
 **Operating Systems:**
 
- + Debian 7 (Squeeze) i686
- + Debian 7 (Squeeze) x86_64
+ + Debian 7 (Wheezy) i686
+ + Debian 7 (Wheezy) x86_64
 
 **Platforms:**
 
@@ -33,10 +33,11 @@ Instructions
 
 You must run this script with options. They are outlined below:
 
- + For a minimal Dropbear based install: `bash minimal.sh dropbear`
- + For a minimal OpenSSH based install: `bash minimal.sh ssh`
- + To install extra packages defined in the extra file: `bash minimal.sh extra`
- + To set the clock, clean files and create a user: `bash minimal.sh configure`
+ + For a minimal Dropbear based install: `./minimal.sh dropbear`
+ + For a minimal Dropbear (without sftp support) based install: `./minimal.sh dropbear_only`
+ + For a minimal OpenSSH based install: `./minimal.sh ssh`
+ + To install extra packages defined in the extra file: `./minimal.sh extra`
+ + To set the clock, clean files and create a user: `./minimal.sh configure`
 
 Credits
 =======
