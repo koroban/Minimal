@@ -88,3 +88,5 @@ wget                                            install
 whiptail                                        install
 xz-utils                                        install
 zlib1g                                          install
+libsigsegv2                                     install
+gawk                                            install
