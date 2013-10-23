@@ -1,3 +1,4 @@
+dialog
 axel
 bwm-ng
 curl
@@ -5,4 +6,3 @@ htop
 psmisc
 python
 screen
-dialog
