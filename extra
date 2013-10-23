@@ -6,3 +6,5 @@ htop
 psmisc
 python
 screen
+inetutils-syslogd
+rsync
