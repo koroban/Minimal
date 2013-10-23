@@ -6,3 +6,4 @@ libnih-dbus1                                    install
 dbus                                            install
 libjson0                                        install
 makedev                                         install
+libnih1                                         install
