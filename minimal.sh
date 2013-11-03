@@ -234,8 +234,26 @@ function install_ssh {
 ## Package Functions ##
 #######################
 
+# thx to Louis Marascio for this (http://fitnr.com/bash-comparing-version-strings.html)
+# return 0 if program version is equal or greater than check version   
+function check_version {
+    local version=$1 check=$2
+    local winner=$(echo -e "$version\n$check" | sed '/^$/d' | sort -nr | head -1)
+    [[ "$winner" = "$version" ]] && return 0
+    return 1
+}    
+
+
 # Use DPKG To Remove Packages
 function packages_clean {
+    # check apt version - if to old, we will break debian if we remove it!
+    apt_version=$(dpkg -s apt | grep Version | sed -e 's/^.*: //g')
+    apt_needed="0.9.7.9"
+    if ! check_version $apt_version $apt_needed; then
+        echo \>\> Upgrade APT to latest version
+        apt-get -y install apt
+    fi
+
 	echo \>\> Cleaning Packages
 	# Clear DPKG Package Selections
 	dpkg --clear-selections
