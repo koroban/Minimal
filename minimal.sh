@@ -250,7 +250,7 @@ function packages_clean {
     apt_version=$(dpkg -s apt | grep Version | sed -e 's/^.*: //g')
     apt_needed="0.9.7.9"
     if ! check_version $apt_version $apt_needed; then
-        echo \>\> APT ($apt_version) to old.
+        echo \>\> APT \($apt_version\) is to old
         echo \>\> Upgrade APT to latest version
         apt-get -y install apt
     fi
