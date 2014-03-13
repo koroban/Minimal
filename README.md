@@ -46,3 +46,7 @@ Credits
  + DPKG Cleaning: http://www.coredump.gr/linux/debian-package-list-backup-and-restore/
  + miTgiB @ daIRC: Script Help
  + SSH Limiting: http://www.hostingfu.com/article/ssh-dictionary-attack-prevention-with-iptables/
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/koroban/minimal/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
